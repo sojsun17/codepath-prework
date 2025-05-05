@@ -9,10 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var changeBackgroundColor: UIButton!
-
+    @IBOutlet weak var ButtonColor: UIButton!
+    
+    @IBAction func ButtonColor(_ sender: Any) {
+        let randomColor = changeColor()
+        view.backgroundColor = randomColor
+    }
     
     func changeColor() -> UIColor{
+            
 
             let red = CGFloat.random(in: 0...1)
             let green = CGFloat.random(in: 0...1)
@@ -21,10 +26,8 @@ class ViewController: UIViewController {
             return UIColor(red: red, green: green, blue: blue, alpha: 0.5)
         }
     
-    @IBAction func changeBackgroundColor(_ sender: UIButton) {
-        let randomColor = changeColor()
-        view.backgroundColor = randomColor
-    }
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
